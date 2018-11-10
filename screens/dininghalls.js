@@ -20,25 +20,41 @@ const SCREEN_WIDTH = width;
 const SCREEN_HEIGHT = height;
 console.log({width, height});
 export default class DiningHallsScreen extends Component {
+    navigateToMenus = () => {
+        console.log('here');
+        this.props.navigation.navigate('DiningMenu');
+    }
+
     render() {
         return(
             <View style={styles.container}>
             <Text style={styles.title}>
             Where do you want to eat?
             </Text>
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu')}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
             name='RoMa Dining Hall'
             />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu')}>
             <DiningHall
             imageSource={{uri: "https://bunge.s3.amazonaws.com/categories/images/000/000/006/content/Super-Cat-Food-Ingredients.jpg?1357968333"}}
             name='Wilcox Dining Hall'
             />
+            </TouchableOpacity>
 
-             <DiningHall
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu')}>
+            <DiningHall
             imageSource={{uri: "http://i.dawn.com/large/2016/05/5742bf39a45f0.jpg"}}
             name='Forbes Dining Hall'
+            whenPressed={() => this.props.navigation.navigate('DiningMenu')}
             />
+            </TouchableOpacity>    
 
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
                 <Text style={styles.signupText}>Back to HomeScreen</Text>
@@ -56,13 +72,13 @@ class DiningHall extends Component {
             source={this.props.imageSource}
             style={styles.optionBox}
             style={[{resizeMode: 'stretch'}, {marginVertical: 10}]}>
-            <TouchableOpacity 
+            <View
             style={styles.optionBox}
-            onPress={() => this.props.navigation.navigate(" *name* ")}>
+            onPress={() => this.props.whenPressed}>
             <Text style={styles.optionName}>
             {this.props.name}
             </Text>
-            </TouchableOpacity>
+            </View>
             </ImageBackground>
         );
     }

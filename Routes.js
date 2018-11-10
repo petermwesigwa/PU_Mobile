@@ -5,8 +5,8 @@ import {
 } from 'react-navigation';
 
 import HomeScreen from './screens/HomeScreen';
-import DiningHall from './screens/dininghalls'
-import DiningMenu from './screens/DiningMenu'
+import DiningHall from './screens/dininghalls';
+import DiningMenu from './screens/DiningMenu';
 
 
 const Navigator = createStackNavigator({
