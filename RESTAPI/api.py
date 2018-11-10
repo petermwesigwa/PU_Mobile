@@ -28,18 +28,21 @@ ma = Marshmallow(app)
 #######################################################################################
 
 class News(db.Model):
+	news_id = db.Column(db.Integer, primary_key = True)
 	headline = db.Column(db.Unicode, unique = False)
 	image = db.Column(db.Unicode, unique = False)
 	date = db.Column(db.Unicode, unique = False)
+	description = db.Column(db.Unicode, unique = False)
 
-	def __init__(self, headline, image, date):
+	def __init__(self, headline, image, date, description):
 		self.headline = headline
 		self.image = image
 		self.date = date
+		self.description = description
 
 class NewsSchema(ma.Schema):
 	class Meta:
-		fields = ('headline', 'image', 'date')
+		fields = ('news_id', 'headline', 'image', 'date', 'description')
 
 news_schema = NewsSchema()
 news_schemas = NewsSchema(many=True)
@@ -59,8 +62,9 @@ def createNews():
 	headline = request.json['headline']
 	image = request.json['image']
 	date = request.json['date']
+	description = request.json['description']
 
-	new_news = News(headline, image, date)
+	new_news = News(headline, image, date, description)
 
 	db.session.add(new_news)
 	db.session.commit()
