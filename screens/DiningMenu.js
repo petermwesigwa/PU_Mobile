@@ -56,6 +56,25 @@ export default class MenuScreen extends Component {
             }
         }
     }
+
+    goToPreviousDay() {
+        var current = this.state.dtdate
+        var prevDate = current.setDate(current.getDate() - 1)    
+        this.props.navigation.navigate('DiningMenu', {
+            locationNum: this.state.locationNum,
+            dtdate: prevDate
+        })
+    }
+
+    goToNextDay() {
+        var current = this.state.dtdate
+        var prevDate = current.setDate(current.getDate() + 1)    
+        this.props.navigation.navigate('DiningMenu', {
+            locationNum: this.state.locationNum,
+            dtdate: prevDate
+        })
+    }
+
     render() {
         return (
             <View style={styles.container}>
@@ -64,12 +83,12 @@ export default class MenuScreen extends Component {
             </TouchableOpacity>
             <View style = {styles.date}>
             <TouchableOpacity
-            onPress={() => {}}>
+            onPress={() => this.goToPreviousDay()}>
             <Text> {'<'}</Text>
             </TouchableOpacity>
             <Text> {this.state.dtdate.toDateString()}</Text>
             <TouchableOpacity
-            onPress={() => {}}>
+            onPress={() => this.goToNextDay()}>
             <Text> {'>'}</Text>
             </TouchableOpacity>
             </View>
