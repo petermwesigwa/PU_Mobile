@@ -167,7 +167,9 @@ export default class MenuScreen extends Component {
             <View style={styles.meal}>
             <Text style={styles.mealName}>{item.attributes.name}</Text>
             <MealEntrees mealArray = {item.children}/>
-            </View> } />
+            </View>  }/>
+        
+
             <TouchableOpacity
             style={styles.button} 
             onPress={() => this.props.navigation.navigate('DiningHall')}>
