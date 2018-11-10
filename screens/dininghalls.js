@@ -16,6 +16,7 @@ import {
 } from 'react-native';
 
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '../utils/settings'
+import PULogo from '../components/PULogo'
 
 WHITMAN_IMG = require('../assets/images/Whitman.jpg')
 WILCOX_IMG = require('../assets/images/Wilcox.jpg')
@@ -36,11 +37,10 @@ export default class DiningHallsScreen extends Component {
     }
     render() {
         return(
-            <ScrollView>
+            
             <View style={styles.container}>
-            <Text style={styles.title}>
-            Where do you want to eat?
-            </Text>
+            <PULogo/>
+            <ScrollView>
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: ROMA, 
@@ -113,12 +113,14 @@ export default class DiningHallsScreen extends Component {
             name='Whitman Dining Hall'
             />
             </TouchableOpacity>
-
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
-                <Text style={styles.signupText}>Back to HomeScreen</Text>
+            </ScrollView>
+            <TouchableOpacity
+            style={styles.button} 
+            onPress={() => this.props.navigation.navigate('HomeScreen')}>
+            <Text style={styles.buttonText}> Back to Home </Text>
             </TouchableOpacity>
             </View>
-            </ScrollView>
+            
         );
         }
 }
@@ -144,6 +146,18 @@ class DiningHall extends Component {
 }
 
 const styles = StyleSheet.create({
+    buttonText: {
+        fontSize: 16,
+        color: 'white',
+        textAlign: 'center',
+        paddingVertical: 16
+    },
+      button: {
+        backgroundColor: '#ee6002',
+        borderRadius: 25,
+        width: SCREEN_WIDTH - 100,
+        margin: 20
+    },
     title: {
         fontSize: 20,
         color: 'red',
@@ -153,7 +167,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        paddingTop: SCREEN_HEIGHT / 8,
+        backgroundColor: "white"
     },
     optionBox: {
         height: 60,

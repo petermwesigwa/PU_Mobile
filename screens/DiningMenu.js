@@ -7,7 +7,7 @@ import {
     FlatList,
 } from 'react-native';
 
-import {API_SERVER, SCREEN_WIDTH} from '../utils/settings'
+import {API_SERVER, SCREEN_WIDTH, SCREEN_HEIGHT} from '../utils/settings'
 
 export default class MenuScreen extends Component {
     async getDiningHall() {
@@ -30,7 +30,8 @@ export default class MenuScreen extends Component {
             locationNum: this.props.navigation.state.params.locationNum,
             dtdate: this.props.navigation.state.params.dtdate,
             menuObj: null,
-            hall: this.props.navigation.state.params.hall
+            hall: this.props.navigation.state.params.hall,
+            error: null
         }
         console.log("Current DHall is " + this.state.locationNum)
         console.log("Current Date is " + this.state.dtdate)
@@ -43,6 +44,10 @@ export default class MenuScreen extends Component {
         });
         console.log(this.state.menuObj);
         console.log(menu.length)
+        if (menu.length == 0) 
+            this.setState({
+                error: 'No Food Listing Available for Today'
+            }) 
 
         // Iterating over the meals
         for (i = 0; i < menu.length; i++)
@@ -64,11 +69,18 @@ export default class MenuScreen extends Component {
         var current = this.state.dtdate
         var prevDate = current
         prevDate.setDate(current.getDate() - 1)
-        let menu = await this.getDiningHall();    
+        let menu = await this.getDiningHall();
+        if (menu.length == 0) {
+            this.setState({
+                error: "No Food Listing Available for Today"
+            }) 
+            return
+        }   
         this.setState({
             locationNum: this.state.locationNum,
             dtdate: prevDate,
-            menuObj: menu
+            menuObj: menu,
+            error: null
         })
         console.log(this.state)
     }
@@ -77,16 +89,55 @@ export default class MenuScreen extends Component {
         var current = this.state.dtdate
         var nextDate = current
         nextDate.setDate(current.getDate() + 1)
-        let menu = await this.getDiningHall();    
+        let menu = await this.getDiningHall();
+        if (menu.length == 0) {
+            this.setState({
+                error: "No Food Listing Available for Today"
+            }) 
+            return
+        }       
         this.setState({
             locationNum: this.state.locationNum,
             dtdate: nextDate,
-            menuObj: menu
+            menuObj: menu,
+            error: null
         });
         console.log(this.state)
     }
 
     render() {
+        if (this.state.error != null) {
+            return(
+                <View style={styles.containerError}>
+                    <View style = {styles.date}>
+                        <TouchableOpacity
+                        onPress={() => this.goToPreviousDay()}>
+                        <Text> {'<'}</Text>
+                        </TouchableOpacity>
+                        <Text> {this.state.dtdate.toDateString()}</Text>
+                        <TouchableOpacity
+                        onPress={() => this.goToNextDay()}>
+                        <Text> {'>'}</Text>
+                        </TouchableOpacity>
+                    </View>
+                    <View style={{
+                        paddingTop: 20
+                    }}>
+                        <Text style={{
+                            fontSize: 20,
+                            color: "darkorange"
+                        }}>{this.state.hall}</Text>
+                    </View>
+                    <Text>{this.state.error}</Text>
+                    <View style={{height: SCREEN_HEIGHT - 300}}></View>
+                    <TouchableOpacity
+                    style={styles.button} 
+                    onPress={() => this.props.navigation.navigate('DiningHall')}>
+                    <Text style={styles.buttonText}> Back to Dining Halls </Text>
+                    </TouchableOpacity>
+                </View>
+            )
+        }
         return (
             <View style={styles.container}>
             
@@ -153,6 +204,12 @@ class MealEntrees extends Component {
 }
 
 const styles = StyleSheet.create({
+    containerError: {
+        paddingTop: 40,
+        flex: 1, 
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+    },
     container: {
         paddingTop: 40,
         flex: 1, 
