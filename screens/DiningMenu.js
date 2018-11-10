@@ -88,9 +88,7 @@ export default class MenuScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
-            <Text> HomeScreen </Text>
-            </TouchableOpacity>
+            
             <View style = {styles.date}>
             <TouchableOpacity
             onPress={() => this.goToPreviousDay()}>
@@ -112,6 +110,11 @@ export default class MenuScreen extends Component {
             <MealEntrees mealArray = {item.children}/>
             </View>}
             />
+            <TouchableOpacity
+            style={styles.button} 
+            onPress={() => this.props.navigation.navigate('DiningHall')}>
+            <Text style={styles.buttonText}> Back to Dining Halls </Text>
+            </TouchableOpacity>
             </View>
         )
     }
@@ -183,5 +186,18 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         borderWidth: 1,
-    }
+    },
+
+    buttonText: {
+        fontSize: 16,
+        color: 'white',
+        textAlign: 'center',
+        paddingVertical: 16
+    },
+      button: {
+        backgroundColor: '#ee6002',
+        borderRadius: 25,
+        width: SCREEN_WIDTH - 100,
+        margin: 20
+    },
 })
