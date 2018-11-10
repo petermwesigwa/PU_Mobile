@@ -7,7 +7,7 @@ import {
     FlatList,
 } from 'react-native';
 
-import {API_SERVER} from '../utils/settings'
+import {API_SERVER, SCREEN_WIDTH} from '../utils/settings'
 
 export default class MenuScreen extends Component {
     async getDiningHall() {
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     meal: {
         margin: 10,
         padding: 5,
-        width: 300,
+        width: SCREEN_WIDTH - 80,
         alignItems: 'center',
         borderColor: 'black',
         borderWidth: 1,

@@ -15,10 +15,8 @@ import {
     Dimensions,
 } from 'react-native';
 
-const {width, height} = Dimensions.get('window');
-const SCREEN_WIDTH = width;
-const SCREEN_HEIGHT = height;
-console.log({width, height});
+import { SCREEN_WIDTH, SCREEN_HEIGHT } from '../utils/settings'
+
 const WILCOX = "02"
 const CJL = "05"
 const FORBES = "03"
