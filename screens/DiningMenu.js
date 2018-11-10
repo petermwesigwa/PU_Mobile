@@ -194,6 +194,7 @@ const styles = StyleSheet.create({
     },
 
     mealName: {
+        // fontFamily: 'RobotoCondensed-Light',
         fontSize: 18,
         color: 'maroon',
     },
