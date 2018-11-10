@@ -4,6 +4,7 @@ import {
     Text,
     View,
     TouchableOpacity,
+    FlatList,
 } from 'react-native';
 
 import {API_SERVER} from '../utils/settings'
@@ -27,14 +28,18 @@ export default class MenuScreen extends Component {
         let date = new Date()
         this.state = {
             locationNum: this.props.navigation.state.params.locationNum,
-            dtdate: (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear()
+            dtdate: (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear(),
+            menuObj: null,
         }
         console.log("Current DHall is " + this.state.locationNum)
         console.log("Current Date is " + this.state.dtdate)
     }
     async componentDidMount() {
-        let menu = await this.getDiningHall()
-        console.log(menu)
+        let menu = await this.getDiningHall();
+        this.setState({
+            menuObj: menu
+        });
+        console.log(this.state.menuObj);
         console.log(menu.length)
 
         // Iterating over the meals
@@ -56,6 +61,15 @@ export default class MenuScreen extends Component {
             <View style={styles.container}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
             <Text> HomeScreen </Text>
+            <FlatList 
+            style={styles.options}
+            data={this.state.menuObj}
+            keyExtractor={item => item.attributes.name}
+            renderItem={({item}) => 
+            <View style={styles.meal}>
+            <Text>{item.attributes.name}</Text>
+            </View>}
+            />
             </TouchableOpacity>
             </View>
         )
@@ -67,5 +81,18 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
+    },
+
+    options: {
+        height: 200,
+        margin: 20
+    },
+
+    meal: {
+        margin: 10,
+        padding: 5,
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
     }
 })
