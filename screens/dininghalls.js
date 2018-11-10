@@ -58,7 +58,7 @@ class DiningHall extends Component {
             style={[{resizeMode: 'stretch'}, {marginVertical: 10}]}>
             <TouchableOpacity 
             style={styles.optionBox}
-            onPress={() => this.props.whenPressed}>
+            onPress={() => this.props.navigation.navigate(" *name* ")}>
             <Text style={styles.optionName}>
             {this.props.name}
             </Text>
