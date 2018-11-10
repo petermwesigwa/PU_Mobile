@@ -196,7 +196,7 @@ const styles = StyleSheet.create({
     mealName: {
         fontSize: 18,
         color: 'maroon',
-    }, 
+    },
 
     buttonText: {
         fontSize: 16,
@@ -210,4 +210,4 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH - 100,
         margin: 20
     },
-});
+})

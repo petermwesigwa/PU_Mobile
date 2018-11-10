@@ -12,7 +12,7 @@ import {
     View, 
     TouchableOpacity,
     ImageBackground,
-    Dimensions,
+    ScrollView
 } from 'react-native';
 
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '../utils/settings'
@@ -29,6 +29,7 @@ export default class DiningHallsScreen extends Component {
     }
     render() {
         return(
+            <ScrollView>
             <View style={styles.container}>
             <Text style={styles.title}>
             Where do you want to eat?
@@ -67,10 +68,44 @@ export default class DiningHallsScreen extends Component {
             />
             </TouchableOpacity>    
 
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: GRADUATE, 
+                dtdate: new Date()
+            })}>
+            <DiningHall 
+            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            name='Graduate College Dining Hall'
+            />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: CJL, 
+                dtdate: new Date()
+            })}>
+            <DiningHall 
+            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            name='Center for Jewish Life'
+            />
+            </TouchableOpacity>
+
+            <TouchableOpacity
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: WHITMAN, 
+                dtdate: new Date()
+            })}>
+            <DiningHall 
+            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            name='Whitman Dining Hall'
+            />
+            </TouchableOpacity>
+
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
                 <Text style={styles.signupText}>Back to HomeScreen</Text>
             </TouchableOpacity>
             </View>
+            </ScrollView>
         );
         }
 }
@@ -121,5 +156,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'left',
-    }
+    },
+    signupText: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '500',
+    paddingBottom: 40
+  },
 })
