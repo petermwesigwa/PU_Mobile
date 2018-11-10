@@ -15,11 +15,7 @@ export default class MenuScreen extends Component {
         
         let url = API_SERVER + '&locationNum=' + this.state.locationNum + '&dtdate=' + this.state.dtdate
         console.log(url)
-        let response = await fetch(
-            url, {
-                "method": "GET"
-            }
-        )
+        let response = await fetch(url)
         console.log(response._bodyText)
         let XMLParser = require('react-xml-parser');
         let xml = new XMLParser().parseFromString(response._bodyText);
