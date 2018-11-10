@@ -24,7 +24,7 @@ export default class Begin extends React.Component {
 				<View style={styles.signupTextCont}>
 					<PULogo/>
 					<TouchableOpacity style = {styles.DiningHall} onPress={() => this.props.navigation.navigate('DiningHall')}>
-						<Text style={styles.textDiningHall}>Dining Hall</Text>
+						<Text style={styles.textDiningHall}>Dining Hall Menus</Text>
 	              		<Image source={pic} style={{width: 130, height: 80}}/>
 	            	</TouchableOpacity>
 					<Text style={styles.labelText}>This is the Home Page</Text>
@@ -61,7 +61,10 @@ const styles = StyleSheet.create({
     	backgroundColor: "orange"
   	},
   	textDiningHall: {
-  		paddingRight: 150,
-  		paddingTop: 30
+  		paddingRight: 80,
+  		paddingTop: 30,
+  		fontSize: 18,
+  		fontWeight: "500",
+  		paddingLeft: 10
   	}
 })
