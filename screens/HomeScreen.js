@@ -11,27 +11,32 @@ import {
 	Image
 } from 'react-native';
 import PULogo from '../components/PULogo'
+import {SCREEN_WIDTH, SCREEN_HEIGHT} from '../utils/settings'
 
 export default class Begin extends React.Component {
 	constructor(props) {
 		super(props)
 	}
 	render() {
-		let pic = {
+		let picDining = {
 			uri: "https://cdn-images-1.medium.com/max/677/1*eF9vnscdeCA8pj1G3Jjh-A.jpeg"
+		}
+		let picNews = {
+			uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOXSf_Lz_oHiLRtelD7Ce38AHxVKmqeJ0BDjR1I3Ikr8KrJAre'
 		}
 		return(
 				<View style={styles.signupTextCont}>
 					<PULogo/>
+					<View>
 					<TouchableOpacity style = {styles.DiningHall} onPress={() => this.props.navigation.navigate('DiningHall')}>
 						<Text style={styles.textDiningHall}>Dining Hall Menus</Text>
-	              		<Image source={pic} style={{width: 130, height: 80}}/>
+	              		<Image source={picDining} style={{width: 130, height: 80}}/>
 	            	</TouchableOpacity>
-					<Text style={styles.labelText}>This is the Home Page</Text>
-
-		            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
-	              		<Text style={styles.signupText}>Back to HomeScreen</Text>
+	            	<TouchableOpacity style = {styles.News} onPress={() => this.props.navigation.navigate('NewsScreen')}>
+						<Text style={styles.textNews}>News</Text>
+	              		<Image source={picNews} style={{width: 130, height: 80}}/>
 	            	</TouchableOpacity>
+	            	</View>
 	            	
           		</View>
 		)
@@ -40,12 +45,11 @@ export default class Begin extends React.Component {
 
 const styles = StyleSheet.create({
 	signupTextCont: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    flexDirection: 'column',
-    paddingBottom: 150,
-    backgroundColor: '#ffffff'
+	    flex: 1,
+	    alignItems: 'center',
+	    justifyContent: 'flex-start',
+	    flexDirection: 'column',
+	    backgroundColor: '#ffffff'
   },
 	signupText: {
     color: 'black',
@@ -58,10 +62,25 @@ const styles = StyleSheet.create({
     	paddingBottom: 2,
     	paddingTop: 2,
     	flexDirection: 'row',
-    	backgroundColor: "orange"
+    	backgroundColor: "orange",
   	},
   	textDiningHall: {
-  		paddingRight: 80,
+  		paddingTop: 30,
+  		fontSize: 18,
+  		fontWeight: "500",
+  		paddingRight: SCREEN_WIDTH - 295,
+  		paddingLeft: 10
+  	},
+  	News: {
+  		borderTopColor: 'black',
+    	borderTopWidth: 1,
+    	paddingBottom: 2,
+    	paddingTop: 2,
+    	flexDirection: 'row',
+    	backgroundColor: "orange"
+  	},
+  	textNews: {
+  		paddingRight: SCREEN_WIDTH - 192,
   		paddingTop: 30,
   		fontSize: 18,
   		fontWeight: "500",
