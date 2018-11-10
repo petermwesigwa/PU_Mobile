@@ -26,6 +26,10 @@ export default class Begin extends React.Component {
 		            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
 	              		<Text style={styles.signupText}>Back to HomeScreen</Text>
 	            	</TouchableOpacity>
+
+	            	<TouchableOpacity onPress={() => this.props.navigation.navigate('DiningHall')}>
+	              		<Text style={styles.signupText}>Go to DiningHall Screen</Text>
+	            	</TouchableOpacity>
           		</View>
 		)
 	}
