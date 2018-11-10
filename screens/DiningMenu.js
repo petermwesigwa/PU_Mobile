@@ -188,7 +188,6 @@ const styles = StyleSheet.create({
         borderWidth: 1,
     },
 
-<<<<<<< HEAD
     foodname: {
         fontSize: 15,
         color: 'red',
@@ -197,8 +196,8 @@ const styles = StyleSheet.create({
     mealName: {
         fontSize: 18,
         color: 'maroon',
-    }
-=======
+    },
+
     buttonText: {
         fontSize: 16,
         color: 'white',
@@ -211,5 +210,4 @@ const styles = StyleSheet.create({
         width: SCREEN_WIDTH - 100,
         margin: 20
     },
->>>>>>> 9773e90872f4dcad696c8960aa968ba028007eb7
 })
