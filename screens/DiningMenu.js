@@ -63,6 +63,17 @@ export default class MenuScreen extends Component {
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
             <Text> HomeScreen </Text>
             </TouchableOpacity>
+            <View style = {styles.date}>
+            <TouchableOpacity
+            onPress={() => {}}>
+            <Text> {'<'}</Text>
+            </TouchableOpacity>
+            <Text> {this.state.dtdate}</Text>
+            <TouchableOpacity
+            onPress={() => {}}>
+            <Text> {'>'}</Text>
+            </TouchableOpacity>
+            </View>
             <FlatList 
             style={styles.options}
             data={this.state.menuObj}
@@ -134,5 +145,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         borderTopWidth: 1,
+    },
+
+    date: {
+        flexDirection: 'row',
+        height: 40,
+        width: SCREEN_WIDTH - 100,
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
     }
 })
