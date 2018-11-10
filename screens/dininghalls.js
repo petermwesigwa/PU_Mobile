@@ -17,6 +17,13 @@ import {
 
 import { SCREEN_WIDTH, SCREEN_HEIGHT } from '../utils/settings'
 
+WHITMAN_IMG = require('../assets/images/Whitman.jpg')
+WILCOX_IMG = require('../assets/images/Wilcox.jpg')
+ROMA_IMG = require('../assets/images/Roma.jpg')
+CJL_IMG = require('../assets/images/CJL.jpg')
+FORBES_IMG = require('../assets/images/Forbes.jpg')
+GRADUATE_IMG = require('../assets/images/graduate.jpg')
+
 const WILCOX = "02"
 const CJL = "05"
 const FORBES = "03"
@@ -41,7 +48,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Rocky/Mathey"
             })}>
             <DiningHall 
-            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            imageSource={ROMA_IMG}
             name='RoMa Dining Hall'
             />
             </TouchableOpacity>
@@ -53,7 +60,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Wilcox"
             })}>
             <DiningHall
-            imageSource={{uri: "https://bunge.s3.amazonaws.com/categories/images/000/000/006/content/Super-Cat-Food-Ingredients.jpg?1357968333"}}
+            imageSource={WILCOX_IMG}
             name='Wilcox Dining Hall'
             />
             </TouchableOpacity>
@@ -65,7 +72,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Forbes"
             })}>
             <DiningHall
-            imageSource={{uri: "http://i.dawn.com/large/2016/05/5742bf39a45f0.jpg"}}
+            imageSource={FORBES_IMG}
             name='Forbes Dining Hall'
             whenPressed={() => this.props.navigation.navigate('DiningMenu')}
             />
@@ -78,7 +85,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Graduate College"
             })}>
             <DiningHall 
-            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            imageSource={GRADUATE_IMG}
             name='Graduate College Dining Hall'
             />
             </TouchableOpacity>
@@ -90,7 +97,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Center for Jewish Life"
             })}>
             <DiningHall 
-            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            imageSource={CJL_IMG}
             name='Center for Jewish Life'
             />
             </TouchableOpacity>
@@ -102,7 +109,7 @@ export default class DiningHallsScreen extends Component {
                 hall: "Whitman"
             })}>
             <DiningHall 
-            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
+            imageSource={WHITMAN_IMG}
             name='Whitman Dining Hall'
             />
             </TouchableOpacity>
