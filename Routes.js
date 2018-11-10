@@ -6,12 +6,13 @@ import {
 
 import HomeScreen from './screens/HomeScreen';
 import DiningHall from './screens/dininghalls'
+import DiningMenu from './screens/DiningMenu'
 
 
 const Navigator = createStackNavigator({
 	HomeScreen: { screen: HomeScreen },
-	DiningHall: { screen: DiningHall}
-
+	DiningHall: { screen: DiningHall},
+	DiningMenu: { screen: DiningMenu}
 },
 {
 	initialRouteName: 'HomeScreen',
