@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
     meal: {
         margin: 10,
         padding: 5,
-        width: 200,
+        width: 300,
         alignItems: 'center',
         borderColor: 'black',
         borderWidth: 1,
@@ -125,7 +125,7 @@ const styles = StyleSheet.create({
         padding: 5,
         alignItems: 'center',
         borderColor: 'black',
-        borderWidth: 1,
+        borderBottomWidth: 1,
     },
 
     entrees: {
@@ -133,6 +133,6 @@ const styles = StyleSheet.create({
         padding: 5,
         alignItems: 'center',
         borderColor: 'black',
-        borderWidth: 1,
+        borderTopWidth: 1,
     }
 })
