@@ -24,7 +24,9 @@ const GRADUATE = "04"
 const ROMA = "01"
 const WHITMAN = "08"
 export default class DiningHallsScreen extends Component {
-
+    constructor(props){
+        super(props)
+    }
     render() {
         return(
             <View style={styles.container}>
@@ -32,7 +34,10 @@ export default class DiningHallsScreen extends Component {
             Where do you want to eat?
             </Text>
             <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('DiningMenu',{locationNum: ROMA})}>
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: ROMA, 
+                dtdate: new Date()
+            })}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
             name='RoMa Dining Hall'
@@ -40,7 +45,10 @@ export default class DiningHallsScreen extends Component {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('DiningMenu',{locationNum: WILCOX})}>
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: WILCOX,
+                dtdate: new Date()
+            })}>
             <DiningHall
             imageSource={{uri: "https://bunge.s3.amazonaws.com/categories/images/000/000/006/content/Super-Cat-Food-Ingredients.jpg?1357968333"}}
             name='Wilcox Dining Hall'
@@ -48,7 +56,10 @@ export default class DiningHallsScreen extends Component {
             </TouchableOpacity>
 
             <TouchableOpacity
-            onPress={() => this.props.navigation.navigate('DiningMenu',{locationNum: FORBES})}>
+            onPress={() => this.props.navigation.navigate('DiningMenu',{
+                locationNum: FORBES,
+                dtdate: new Date()
+            })}>
             <DiningHall
             imageSource={{uri: "http://i.dawn.com/large/2016/05/5742bf39a45f0.jpg"}}
             name='Forbes Dining Hall'

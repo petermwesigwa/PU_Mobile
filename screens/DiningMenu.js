@@ -13,8 +13,8 @@ export default class MenuScreen extends Component {
     async getDiningHall() {
         const parseString = require('react-native-xml2js').parseString;
 
-        
-        let url = API_SERVER + '&locationNum=' + this.state.locationNum + '&dtdate=' + this.state.dtdate
+        let date_string = (this.state.dtdate.getMonth() + 1) + '-' + this.state.dtdate.getDate() + '-' + this.state.dtdate.getFullYear()
+        let url = API_SERVER + '&locationNum=' + this.state.locationNum + '&dtdate=' + date_string
         console.log(url)
         let response = await fetch(url)
         console.log(response._bodyText)
@@ -25,10 +25,9 @@ export default class MenuScreen extends Component {
     }
     constructor(props) {
         super(props)
-        let date = new Date()
         this.state = {
             locationNum: this.props.navigation.state.params.locationNum,
-            dtdate: (date.getMonth() + 1) + '-' + date.getDate() + '-' + date.getFullYear(),
+            dtdate: this.props.navigation.state.params.dtdate,
             menuObj: null,
         }
         console.log("Current DHall is " + this.state.locationNum)
