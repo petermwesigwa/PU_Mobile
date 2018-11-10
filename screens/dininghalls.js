@@ -37,7 +37,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: ROMA, 
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Rocky/Mathey"
             })}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
@@ -48,7 +49,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: WILCOX,
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Wilcox"
             })}>
             <DiningHall
             imageSource={{uri: "https://bunge.s3.amazonaws.com/categories/images/000/000/006/content/Super-Cat-Food-Ingredients.jpg?1357968333"}}
@@ -59,7 +61,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: FORBES,
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Forbes"
             })}>
             <DiningHall
             imageSource={{uri: "http://i.dawn.com/large/2016/05/5742bf39a45f0.jpg"}}
@@ -71,7 +74,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: GRADUATE, 
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Graduate College"
             })}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
@@ -82,7 +86,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: CJL, 
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Center for Jewish Life"
             })}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
@@ -93,7 +98,8 @@ export default class DiningHallsScreen extends Component {
             <TouchableOpacity
             onPress={() => this.props.navigation.navigate('DiningMenu',{
                 locationNum: WHITMAN, 
-                dtdate: new Date()
+                dtdate: new Date(),
+                hall: "Whitman"
             })}>
             <DiningHall 
             imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}

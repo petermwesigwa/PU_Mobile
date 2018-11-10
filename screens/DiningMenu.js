@@ -30,6 +30,7 @@ export default class MenuScreen extends Component {
             locationNum: this.props.navigation.state.params.locationNum,
             dtdate: this.props.navigation.state.params.dtdate,
             menuObj: null,
+            hall: this.props.navigation.state.params.hall
         }
         console.log("Current DHall is " + this.state.locationNum)
         console.log("Current Date is " + this.state.dtdate)
@@ -99,6 +100,14 @@ export default class MenuScreen extends Component {
             onPress={() => this.goToNextDay()}>
             <Text> {'>'}</Text>
             </TouchableOpacity>
+            </View>
+            <View style={{
+                paddingTop: 20
+            }}>
+                <Text style={{
+                    fontSize: 20,
+                    color: "darkorange"
+                }}>{this.state.hall}</Text>
             </View>
             <FlatList 
             style={styles.options}
