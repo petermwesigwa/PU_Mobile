@@ -25,6 +25,7 @@ export default class MenuScreen extends Component {
     }
     constructor(props) {
         super(props)
+        console.log("Constructed-----------------")
         this.state = {
             locationNum: this.props.navigation.state.params.locationNum,
             dtdate: this.props.navigation.state.params.dtdate,
@@ -34,6 +35,7 @@ export default class MenuScreen extends Component {
         console.log("Current Date is " + this.state.dtdate)
     }
     async componentDidMount() {
+        console.log("Component Did Mount ----------------")
         let menu = await this.getDiningHall();
         this.setState({
             menuObj: menu
@@ -59,20 +61,44 @@ export default class MenuScreen extends Component {
 
     goToPreviousDay() {
         var current = this.state.dtdate
+<<<<<<< HEAD
         console.log(current);
         var newDate = current.setDate(current.getDate() - 1);
         console.log(newDate);
         this.setState({
             dtdate: newDate,
         });
+=======
+        var prevDate = current
+        prevDate.setDate(current.getDate() - 1)
+        let menu = this.getDiningHall();    
+        this.setState({
+            locationNum: this.state.locationNum,
+            dtdate: prevDate,
+            menuObj: menu
+        })
+        console.log(this.state)
+>>>>>>> 15501f7f04954dd57be7e00a1c0a4592fd71fee9
     }
 
     goToNextDay() {
         var current = this.state.dtdate
+<<<<<<< HEAD
         var prevDate = current.setDate(current.getDate() + 1)  
         this.setState({
             dtdate: prevDate,
         });
+=======
+        var nextDate = current
+        nextDate.setDate(current.getDate() + 1)
+        let menu = this.getDiningHall();    
+        this.setState({
+            locationNum: this.state.locationNum,
+            dtdate: nextDate,
+            menuObj: menu
+        });
+        console.log(this.state)
+>>>>>>> 15501f7f04954dd57be7e00a1c0a4592fd71fee9
     }
 
     render() {
