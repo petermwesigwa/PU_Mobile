@@ -23,8 +23,8 @@ import {
 
  const styles = StyleSheet.create({
  	container: {
- 		flex: 1,
- 		paddingVertical: 50,
+ 		height: 150,
+ 		margin: 40,
  		flexDirection: 'column',
  		justifyContent: 'flex-start',
  		alignItems: 'center'
