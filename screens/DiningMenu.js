@@ -45,7 +45,8 @@ export default class MenuScreen extends Component {
         // Iterating over the meals
         for (i = 0; i < menu.length; i++)
         {
-            console.log("Meal: " + menu[i].attributes.name)
+            let meal = menu[i].attributes.name
+            console.log("Meal: " + meal)
             // Iterating over the entrees
             for (j = 0; j < menu[i].children.length; j++)
             {
