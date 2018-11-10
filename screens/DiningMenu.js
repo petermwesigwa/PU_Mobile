@@ -140,7 +140,6 @@ export default class MenuScreen extends Component {
         }
         return (
             <View style={styles.container}>
-            
             <View style = {styles.date}>
             <TouchableOpacity
             onPress={() => this.goToPreviousDay()}>
