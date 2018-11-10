@@ -74,7 +74,11 @@ class DiningHall extends Component {
             style={[{resizeMode: 'stretch'}, {marginVertical: 10}]}>
             <View
             style={styles.optionBox}
+<<<<<<< HEAD
             onPress={() => this.props.whenPressed}>
+=======
+            onPress={() => this.props.navigation.navigate("DiningMenu")}>
+>>>>>>> b37c1b2a300f53db8ab456407579c13ae9a863fe
             <Text style={styles.optionName}>
             {this.props.name}
             </Text>
