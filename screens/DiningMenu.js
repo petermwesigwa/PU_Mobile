@@ -39,7 +39,20 @@ export default class MenuScreen extends Component {
     async componentDidMount() {
         let menu = await this.getDiningHall()
         console.log(menu)
-        let length 
+        console.log(menu.length)
+
+        // Iterating over the meals
+        for (i = 0; i < menu.length; i++)
+        {
+            // Iterating over the entrees
+            for (j = 0; j < menu[i].children.length; j++)
+            {
+                let food = menu[i].children[j].children[0].value
+                let allergens = menu[i].children[j].children[14].value
+                console.log("Food: " + food)
+                console.log("Allergens: " + allergens)
+            }
+        }
     }
     render() {
         return (
