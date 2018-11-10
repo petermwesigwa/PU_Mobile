@@ -34,6 +34,10 @@ export default class DiningHallsScreen extends Component {
             imageSource={{uri: "https://pr.princeton.edu/pwb/05/1024/m/1aIMG_8963.jpg"}}
             name='Rocky'
             />
+
+            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
+                <Text style={styles.signupText}>Back to HomeScreen</Text>
+            </TouchableOpacity>
             </View>
         );
         }

@@ -9,7 +9,8 @@ import {
 	TextInput,
 	View,
 	Picker,
-	TouchableOpacity
+	TouchableOpacity,
+	Image
 } from 'react-native';
 import PULogo from '../components/PULogo'
 
@@ -18,18 +19,21 @@ export default class Begin extends React.Component {
 		super(props)
 	}
 	render() {
+		let pic = {
+			uri: "https://cdn-images-1.medium.com/max/677/1*eF9vnscdeCA8pj1G3Jjh-A.jpeg"
+		}
 		return(
 				<View style={styles.signupTextCont}>
 					<PULogo/>
+					<TouchableOpacity style = {styles.DiningHall} onPress={() => this.props.navigation.navigate('DiningHall')}>
+	              		<Image source={pic} style={{width: 130, height: 80}}/>
+	            	</TouchableOpacity>
 					<Text style={styles.labelText}>This is the Home Page</Text>
 
 		            <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
 	              		<Text style={styles.signupText}>Back to HomeScreen</Text>
 	            	</TouchableOpacity>
-
-	            	<TouchableOpacity onPress={() => this.props.navigation.navigate('DiningHall')}>
-	              		<Text style={styles.signupText}>Go to DiningHall Screen</Text>
-	            	</TouchableOpacity>
+	            	
           		</View>
 		)
 	}
@@ -51,5 +55,11 @@ const styles = StyleSheet.create({
   },
   	labelText: {
   		flex: 0
+  },
+  	DiningHall: {
+  		borderBottomColor: 'black',
+    	borderBottomWidth: 1,
+    	paddingBottom: 200,
+    	paddingLeft: 30
   	}
 })
