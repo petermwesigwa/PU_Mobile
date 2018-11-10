@@ -62,6 +62,7 @@ export default class MenuScreen extends Component {
             <View style={styles.container}>
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
             <Text> HomeScreen </Text>
+            </TouchableOpacity>
             <FlatList 
             style={styles.options}
             data={this.state.menuObj}
@@ -69,21 +70,32 @@ export default class MenuScreen extends Component {
             renderItem={({item}) => 
             <View style={styles.meal}>
             <Text>{item.attributes.name}</Text>
+            <MealEntrees mealArray = {item.children}/>
             </View>}
             />
-            </TouchableOpacity>
             </View>
         )
     }
 }
 
-// class Meal extends Component {
-//     render() {
-//         return (
-//             <View style={}
-//         )
-//     }
-// }
+class MealEntrees extends Component {
+    render() {
+        return (
+            <FlatList
+            style={styles.entrees}
+            data={this.props.mealArray}
+            keyExtractor={item => item.children[0].value}
+            renderItem = {({item}) => 
+                <View style={styles.entree}>
+                <Text>{"Entree: " + item.children[0].value}</Text>
+                <Text>{"Allergens: " + item.children[14].value}</Text>
+                </View>
+            }
+            />
+        );
+            
+    }
+}
 
 const styles = StyleSheet.create({
     container: {
@@ -109,6 +121,14 @@ const styles = StyleSheet.create({
     },
 
     entree: {
+        margin: 10,
+        padding: 5,
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
+    },
+
+    entrees: {
         margin: 10,
         padding: 5,
         alignItems: 'center',
