@@ -67,7 +67,7 @@ export default class MenuScreen extends Component {
             onPress={() => {}}>
             <Text> {'<'}</Text>
             </TouchableOpacity>
-            <Text> {this.state.dtdate}</Text>
+            <Text> {this.state.dtdate.toDateString()}</Text>
             <TouchableOpacity
             onPress={() => {}}>
             <Text> {'>'}</Text>
