@@ -87,8 +87,8 @@ class MealEntrees extends Component {
             keyExtractor={item => item.children[0].value}
             renderItem = {({item}) => 
                 <View style={styles.entree}>
-                <Text>{"Entree: " + item.children[0].value}</Text>
-                <Text>{"Allergens: " + item.children[14].value}</Text>
+                <Text>{"Entree: " + item.children[0].value.replace('&amp;', '&')}</Text>
+                <Text>{"Allergens: " + item.children[14].value.replace('&amp;', '&')}</Text>
                 </View>
             }
             />
