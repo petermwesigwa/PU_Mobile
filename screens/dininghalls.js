@@ -27,11 +27,11 @@ export default class DiningHallsScreen extends Component {
             Where do you want to eat?
             </Text>
             <DiningHall 
-            imageSource={{uri: "https://pr.princeton.edu/pwb/05/1024/m/1aIMG_8963.jpg"}}
+            imageSource={{uri: "https://avatars.mds.yandex.net/get-pdb/25978/44b025de-0a10-49d3-acde-a9283fac9105/s1200"}}
             name='Mathey'
             />
             <DiningHall
-            imageSource={{uri: "https://pr.princeton.edu/pwb/05/1024/m/1aIMG_8963.jpg"}}
+            imageSource={{uri: "https://bunge.s3.amazonaws.com/categories/images/000/000/006/content/Super-Cat-Food-Ingredients.jpg?1357968333"}}
             name='Rocky'
             />
 
@@ -85,8 +85,9 @@ const styles = StyleSheet.create({
     },
 
     optionName: {
-        color: 'pink',
+        color: 'black',
         fontSize: 20,
+        fontWeight: 'bold',
         textAlign: 'left',
     }
 })
