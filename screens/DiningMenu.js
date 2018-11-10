@@ -78,12 +78,14 @@ export default class MenuScreen extends Component {
 
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 40,
         flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
     },
 
     options: {
+        flex: 1,
         height: 200,
         margin: 20
     },
