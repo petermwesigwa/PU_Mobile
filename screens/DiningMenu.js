@@ -59,20 +59,20 @@ export default class MenuScreen extends Component {
 
     goToPreviousDay() {
         var current = this.state.dtdate
-        var prevDate = current.setDate(current.getDate() - 1)    
-        this.props.navigation.navigate('DiningMenu', {
-            locationNum: this.state.locationNum,
-            dtdate: prevDate
-        })
+        console.log(current);
+        var newDate = current.setDate(current.getDate() - 1);
+        console.log(newDate);
+        this.setState({
+            dtdate: newDate,
+        });
     }
 
     goToNextDay() {
         var current = this.state.dtdate
-        var prevDate = current.setDate(current.getDate() + 1)    
-        this.props.navigation.navigate('DiningMenu', {
-            locationNum: this.state.locationNum,
-            dtdate: prevDate
-        })
+        var prevDate = current.setDate(current.getDate() + 1)  
+        this.setState({
+            dtdate: prevDate,
+        });
     }
 
     render() {
