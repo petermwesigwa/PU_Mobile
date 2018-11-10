@@ -1,7 +1,5 @@
 // This file is merely a template for the start of a given file,
 // so that I can Live Code with the Application
-
-
 import React from 'react';
 import {
 	Text,
