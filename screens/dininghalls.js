@@ -43,6 +43,7 @@ export default class DiningHallsScreen extends Component {
         }
 }
 
+/* render each option that users have to eat from */
 class DiningHall extends Component {
     render() {
         return (
