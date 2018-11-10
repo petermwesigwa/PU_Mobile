@@ -108,7 +108,7 @@ export default class MenuScreen extends Component {
             keyExtractor={item => item.attributes.name}
             renderItem={({item}) => 
             <View style={styles.meal}>
-            <Text>{item.attributes.name}</Text>
+            <Text style={styles.mealName}>{item.attributes.name}</Text>
             <MealEntrees mealArray = {item.children}/>
             </View>}
             />
@@ -126,7 +126,7 @@ class MealEntrees extends Component {
             keyExtractor={item => item.children[0].value}
             renderItem = {({item}) => 
                 <View style={styles.entree}>
-                <Text>{"Entree: " + item.children[0].value.replace('&amp;', '&')}</Text>
+                <Text style={styles.foodname}>{item.children[0].value.replace('&amp;', '&')}</Text>
                 <Text>{"Allergens: " + item.children[14].value.replace('&amp;', '&')}</Text>
                 </View>
             }
@@ -183,5 +183,15 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         borderWidth: 1,
+    },
+
+    foodname: {
+        fontSize: 15,
+        color: 'red',
+    },
+
+    mealName: {
+        fontSize: 18,
+        color: 'maroon',
     }
 })
