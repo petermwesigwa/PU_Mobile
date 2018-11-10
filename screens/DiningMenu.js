@@ -76,6 +76,14 @@ export default class MenuScreen extends Component {
     }
 }
 
+// class Meal extends Component {
+//     render() {
+//         return (
+//             <View style={}
+//         )
+//     }
+// }
+
 const styles = StyleSheet.create({
     container: {
         paddingTop: 40,
@@ -91,6 +99,15 @@ const styles = StyleSheet.create({
     },
 
     meal: {
+        margin: 10,
+        padding: 5,
+        width: 200,
+        alignItems: 'center',
+        borderColor: 'black',
+        borderWidth: 1,
+    },
+
+    entree: {
         margin: 10,
         padding: 5,
         alignItems: 'center',
