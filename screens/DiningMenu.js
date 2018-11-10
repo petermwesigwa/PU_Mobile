@@ -160,21 +160,18 @@ export default class MenuScreen extends Component {
                     color: "darkorange"
                 }}>{this.state.hall}</Text>
             </View>
-            {this.state.menuObj.length == 0 ?
             <FlatList 
             style={styles.options}
             data={this.state.menuObj}
             keyExtractor={item => item.attributes.name}
-            renderItem={({item}) => this.state.menuObj !== 0 ?
+            renderItem={({item}) =>
             <View style={styles.meal}>
             <Text style={styles.mealName}>{item.attributes.name}</Text>
             <MealEntrees mealArray = {item.children}/>
-            </View> 
-              <Text style={styles.mealName}> No listings available for this day</Text>
-            }
+            </View>  }/>
         
-            }
-            <TouchableOpacity>
+
+            <TouchableOpacity
             style={styles.button} 
             onPress={() => this.props.navigation.navigate('DiningHall')}>
             <Text style={styles.buttonText}> Back to Dining Halls </Text>
