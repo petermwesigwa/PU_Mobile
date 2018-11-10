@@ -170,11 +170,11 @@ export default class MenuScreen extends Component {
             <Text style={styles.mealName}>{item.attributes.name}</Text>
             <MealEntrees mealArray = {item.children}/>
             </View> 
-            :  <Text style={styles.mealName}> No listings available for this day</Text>
+              <Text style={styles.mealName}> No listings available for this day</Text>
             }
         
             }
-            <TouchableOpacity
+            <TouchableOpacity>
             style={styles.button} 
             onPress={() => this.props.navigation.navigate('DiningHall')}>
             <Text style={styles.buttonText}> Back to Dining Halls </Text>
