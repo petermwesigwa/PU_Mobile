@@ -60,8 +60,8 @@ export default class MenuScreen extends Component {
     }
 
     async goToPreviousDay() {
-        var current = this.state.dtdate;
-        var prevDate = current;
+        var current = this.state.dtdate
+        var prevDate = current
         prevDate.setDate(current.getDate() - 1)
         let menu = await this.getDiningHall();    
         this.setState({
