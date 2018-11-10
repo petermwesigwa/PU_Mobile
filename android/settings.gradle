@@ -1,0 +1,3 @@
+rootProject.name = 'PU_Mobile'
+
+include ':app'
