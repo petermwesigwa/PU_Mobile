@@ -7,12 +7,14 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import DiningHall from './screens/dininghalls';
 import DiningMenu from './screens/DiningMenu';
+import NewsScreen from './screens/NewsScreen'
 
 
 const Navigator = createStackNavigator({
 	HomeScreen: { screen: HomeScreen },
 	DiningHall: { screen: DiningHall},
-	DiningMenu: { screen: DiningMenu}
+	DiningMenu: { screen: DiningMenu},
+	NewsScreen: { screen: NewsScreen}
 },
 {
 	initialRouteName: 'HomeScreen',
