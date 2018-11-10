@@ -93,7 +93,7 @@ export default class MenuScreen extends Component {
             <View style = {styles.date}>
             <TouchableOpacity
             onPress={() => this.goToPreviousDay()}>
-            <Text> {'<'}</Text>
+            <Text style={{fontSize: 20}}> {'<'}</Text>
             </TouchableOpacity>
             <Text> {this.state.dtdate.toDateString()}</Text>
             <TouchableOpacity
@@ -109,16 +109,20 @@ export default class MenuScreen extends Component {
                     color: "darkorange"
                 }}>{this.state.hall}</Text>
             </View>
+            {this.state.menuObj.length == 0 ?
             <FlatList 
             style={styles.options}
             data={this.state.menuObj}
             keyExtractor={item => item.attributes.name}
-            renderItem={({item}) => 
+            renderItem={({item}) => this.state.menuObj !== 0 ?
             <View style={styles.meal}>
             <Text style={styles.mealName}>{item.attributes.name}</Text>
             <MealEntrees mealArray = {item.children}/>
-            </View>}
-            />
+            </View> 
+            :  <Text style={styles.mealName}> No listings available for this day</Text>
+            }
+        
+            }
             <TouchableOpacity
             style={styles.button} 
             onPress={() => this.props.navigation.navigate('DiningHall')}>
