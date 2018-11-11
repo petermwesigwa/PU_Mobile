@@ -4,13 +4,21 @@ import {
     Text,
     View,
     TouchableOpacity,
+    FlatList
 } from 'react-native';
 
 import {DATABASE_URL} from '../utils/settings' 
 
-export default class MenuScreen extends Component {
+export default class NewsScreen extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            dtdate: new Date().getDay(),
+            news_stories: null
+        }
+    }
     async componentDidMount() {
-        let day = new Date().getDay()
+        let day = this.state.dtdate
         console.log(day)
         if (day == 0) day = 'Sunday'
         else if (day == 1) day = 'Monday'
@@ -23,11 +31,15 @@ export default class MenuScreen extends Component {
         let url = DATABASE_URL + '/news/' + day
         let response = await fetch(url)
         let responseJson = await response.json()
-        console.log(responseJson[0])
+        this.setState({
+            news_stories: responseJson
+        })
+        console.log(this.state)
     }
     render() {
         return (
             <View style={styles.container}>
+            
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
             <Text> HomeScreen </Text>
             </TouchableOpacity>
