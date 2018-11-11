@@ -255,13 +255,13 @@ const styles = StyleSheet.create({
     },
 
     foodname: {
-        fontFamily: 'PoorStory-Regular',
+        fontFamily: 'Futura',
         fontSize: 18,
         color: 'red',
     },
 
     mealName: {
-        fontFamily: 'PoorStory-Regular',
+        fontFamily: 'Futura',
         fontSize: 22,
         color: 'maroon',
     },
