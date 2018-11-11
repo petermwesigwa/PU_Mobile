@@ -39,10 +39,19 @@ export default class NewsScreen extends Component {
     render() {
         return (
             <View style={styles.container}>
-            
             <TouchableOpacity onPress={() => this.props.navigation.navigate('HomeScreen')}>
-            <Text> HomeScreen </Text>
+            <Text> Return to Home </Text>
             </TouchableOpacity>
+            <FlatList 
+            contentContainerStyle={styles.newsItems}
+            data={this.state.news_stories}
+            keyExtractor={item => item.description}
+            renderItem={({item}) => 
+                <View style={{margin: 20, borderColor: 'black', borderBottomWidth: 1,}}>
+                <Text>{item.description}</Text>
+                </View>
+            }
+            />
             </View>
         )
     }
@@ -53,5 +62,12 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
+    },
+
+    newsItems: {
+        margin: 10,
+        padding: 25,
+        alignItems: 'center',
+        backgroundColor: 'red'
     }
 })
