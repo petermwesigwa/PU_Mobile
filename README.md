@@ -14,6 +14,6 @@ In order to combat this situation, we created our own SQLite database, and store
 
 # Notes on running the app
 
-You will need to "cd" into the RESTAPI directory, issue a "python api.py" command to initiate the server for the database with the dummy data on news. Once this server has started, then open up the ios folder in our repository, and run the XCode project within. This should create a simulator from which you should be able to use our application.
+You will need to "cd" into the RESTAPI directory, issue a "python api.py" command to initiate the server for the database with the dummy data on news. Please ensure that flask, flask_sqlalchemy, and flask_marshmallow are installed on your local machine. Once this server has started, then open up the ios folder in our repository, and run the XCode project within. This should create a simulator from which you should be able to use our application.
 
 Additionally, you may build the application onto your mobile device, and test our application from your own device. If you chose to do this, you will have to change the "DATABASE_SERVER" variable in the '/utils/settings.js' to the server that the database is running on. If you run the project with XCode, the DATABASE_SERVER will automatically attempt to connect to localhost, so it will work.
