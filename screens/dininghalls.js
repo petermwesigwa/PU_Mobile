@@ -131,8 +131,7 @@ class DiningHall extends Component {
         return (
             <ImageBackground 
             source={this.props.imageSource}
-            style={styles.optionBox}
-            style={[{resizeMode: 'stretch'}, {marginVertical: 10}]}>
+            style={[{resizeMode: 'stretch'}, styles.optionBox]}>
             <View
             style={styles.optionBox}
             onPress={() => this.props.navigation.navigate("DiningMenu")}>
@@ -170,24 +169,27 @@ const styles = StyleSheet.create({
         backgroundColor: "white"
     },
     optionBox: {
-        height: 60,
+        height: 100,
         width: SCREEN_WIDTH - 100,
-        marginHorizontal: 20,
-        marginVertical: 20,
+        marginHorizontal: 2,
+        marginVertical: 10,
         justifyContent: 'flex-end',
+        shadowColor: "black",
+        shadowOffset: {width: 1, height: 2},
+        shadowRadius: 2,
 
     },
 
     optionName: {
-        color: 'skyblue',
+        color: 'white',
         fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'left',
     },
     signupText: {
-    color: 'black',
-    fontSize: 16,
-    fontWeight: '500',
-    paddingBottom: 40
-  },
+        color: 'black',
+        fontSize: 16,
+        fontWeight: '500',
+        paddingBottom: 40
+    },
 })

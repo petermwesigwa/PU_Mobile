@@ -148,7 +148,7 @@ export default class MenuScreen extends Component {
             <Text> {this.state.dtdate.toDateString()}</Text>
             <TouchableOpacity
             onPress={() => this.goToNextDay()}>
-            <Text> {'>'}</Text>
+            <Text style={{fontSize: 20}}> {'>'}</Text>
             </TouchableOpacity>
             </View>
             <View style={{
