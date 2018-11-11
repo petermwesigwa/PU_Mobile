@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
     },
 
     mealName: {
-        fontFamily:'Futura',
+        fontFamily: 'Futura',
         fontSize: 22,
         color: 'maroon',
     },
