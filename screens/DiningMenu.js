@@ -256,13 +256,13 @@ const styles = StyleSheet.create({
 
     foodname: {
         fontFamily: 'PoorStory-Regular',
-        fontSize: 16,
+        fontSize: 18,
         color: 'red',
     },
 
     mealName: {
         fontFamily: 'PoorStory-Regular',
-        fontSize: 20,
+        fontSize: 22,
         color: 'maroon',
     },
 
