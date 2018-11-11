@@ -1,6 +1,5 @@
 # PU_Mobile
-Authors: Peter Mwesigwa
-Authors: Vinay Ramesh
+Authors: Peter Mwesigwa and Vinay Ramesh
 
 This is a new Princeton University mobile application, aimed to vitalize the experience in comparison to the current version. In the status quo, the design is evidently clunky and not aesthetically pleasing. Additionally, many of the end points take a long time to render in the current app. Our app is not only faster, but it is also looks much better, and will encourage the Princeton community to make the application an integral part of their experience. 
 
