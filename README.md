@@ -16,3 +16,9 @@ In order to combat this situation, we created our own SQLite database, and store
 You will need to "cd" into the RESTAPI directory, issue a "python api.py" command to initiate the server for the database with the dummy data on news. Please ensure that flask, flask_sqlalchemy, and flask_marshmallow are installed on your local machine. Once this server has started, then open up the ios folder in our repository, and run the XCode project within. This should create a simulator from which you should be able to use our application.
 
 Additionally, you may build the application onto your mobile device, and test our application from your own device. If you chose to do this, you will have to change the "DATABASE_SERVER" variable in the '/utils/settings.js' to the server that the database is running on. If you run the project with XCode, the DATABASE_SERVER will automatically attempt to connect to localhost, so it will work.
+
+Another alternative to run this application assumes that you already have React Native installed on your laptop. If so, you can connect via MicroUSB an Andriod charger to your local computer, and run the command "react-native run-android". Ensure that developer mode is enabled on your mobile device.
+
+# Conclusion
+
+This was a great start to an app we hope to build on after the competition, and the aim is to replace the original with something more vibrant and efficient.
