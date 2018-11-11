@@ -33,16 +33,18 @@ class News(db.Model):
 	image = db.Column(db.Unicode, unique = False)
 	date = db.Column(db.Unicode, unique = False)
 	description = db.Column(db.Unicode, unique = False)
+	article = db.Column(db.Unicode, unique=True)
 
-	def __init__(self, headline, image, date, description):
+	def __init__(self, headline, image, date, description, article):
 		self.headline = headline
 		self.image = image
 		self.date = date
 		self.description = description
+		self.article = article
 
 class NewsSchema(ma.Schema):
 	class Meta:
-		fields = ('news_id', 'headline', 'image', 'date', 'description')
+		fields = ('news_id', 'headline', 'image', 'date', 'description', 'article')
 
 news_schema = NewsSchema()
 news_schemas = NewsSchema(many=True)
@@ -63,8 +65,9 @@ def createNews():
 	image = request.json['image']
 	date = request.json['date']
 	description = request.json['description']
+	article = request.json['article']
 
-	new_news = News(headline, image, date, description)
+	new_news = News(headline, image, date, description, article)
 
 	db.session.add(new_news)
 	db.session.commit()
@@ -73,6 +76,47 @@ def createNews():
 
 #######################################################################################
 
+@app.route('/news/<news_id>', methods=["DELETE"])
+def deleteNews(news_id):
+	news = News.query.get(news_id)
+
+	db.session.delete(news)
+	db.session.commit()
+
+	return news_schema.jsonify(news)
+
+
+#######################################################################################
+
+@app.route('/news/<news_id>', methods=["PUT"])
+def updateNews(news_id):
+	news = News.query.get(news_id)
+
+	headline = request.json['headline']
+	image = request.json['image']
+	date = request.json['date']
+	description = request.json['description']
+	article = request.json['article']
+
+	news.headline = headline
+	news.image = image
+	news.date = date
+	news.description = description
+	news.article = article
+
+	db.session.commit()
+	return news_schema.jsonify(news)
+
+
+#######################################################################################
+
+@app.route('/news', methods=["GET"])
+def getAllNews():
+	all_news = News.query.all()
+	result = news_schemas.dump(all_news)
+	return jsonify(result.data)
+
+#######################################################################################
 
 if __name__ == '__main__':
 	app.run(debug=True)
