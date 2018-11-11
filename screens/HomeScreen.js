@@ -19,7 +19,7 @@ export default class Begin extends React.Component {
 	}
 	render() {
 		let picDining = {
-			uri: "https://cdn-images-1.medium.com/max/677/1*eF9vnscdeCA8pj1G3Jjh-A.jpeg"
+			uri: "https://t2vhjkrglh-flywheel.netdna-ssl.com/wp-content/uploads/2018/09/A-Fenwick-Fish_Tacos-7364-696x463.jpg"
 		}
 		let picNews = {
 			uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOXSf_Lz_oHiLRtelD7Ce38AHxVKmqeJ0BDjR1I3Ikr8KrJAre'

@@ -211,12 +211,14 @@ const styles = StyleSheet.create({
         flex: 1, 
         justifyContent: 'center',
         alignItems: 'center',
+        backgroundColor: 'whitesmoke',
     },
 
     options: {
         flex: 1,
         height: 200,
-        margin: 20
+        margin: 20,
+        backgroundColor: 'white',
     },
 
     meal: {
@@ -242,6 +244,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         borderTopWidth: 1,
+        backgroundColor: '#ffffe9',
     },
 
     date: {
@@ -252,6 +255,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         borderColor: 'black',
         borderWidth: 1,
+        backgroundColor: 'white',
     },
 
     foodname: {
